@@ -3,8 +3,6 @@
 ```python
 # Clase 3: Imágenes y Representación Digital
 
-# Trabajamos con imágenes en 8 bits, donde los píxeles tienen valores de 0 a 255. 
-# Nota: OpenCV carga imágenes en BGR, por lo que es necesario convertirlas a RGB.
 
 import cv2
 # Leer la imagen
