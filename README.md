@@ -1,177 +1,38 @@
-# Procesamiento de Imágenes
-
-Este repositorio contiene ejemplos y ejercicios prácticos sobre procesamiento de imágenes, utilizando herramientas como OpenCV, Octave, y otros paquetes relevantes. A continuación se presenta un resumen de las clases y las principales operaciones discutidas.
-
-## Clase 1: Introducción
-
-Se discutieron los conceptos iniciales sobre el procesamiento de imágenes.
-
-## Clase 2: Feriado
-
-No hubo clase.
-
-## Clase 3: Imágenes y Representación Digital
-
-### ¿Qué es una imagen?
-Una imagen es una representación bidimensional de una escena, capturada por un sistema (cámara, escáner, etc.). En computadoras, se representa como una matriz bidimensional donde cada entrada corresponde a un píxel.
-
-### Imágenes en Escala de Grises y RGB
-Trabajamos con imágenes en 8 bits, donde los píxeles tienen valores de 0 a 255. Nota: OpenCV carga imágenes en BGR, por lo que es necesario convertirlas a RGB.
+# Código y Comentarios de Procesamiento de Imágenes
 
 ```python
-import cv2
-A = cv2.imread('img.jpeg')
-A = cv2.cvtColor(A, cv2.COLOR_BGR2RGB)
-Operaciones Básicas con Imágenes en Octave
-Cargar y Mostrar Imágenes
-octave
- 
-A = imread('img.jpg');
-imshow(A);
-Guardar Imágenes en Diferentes Formatos
-octave
- 
-imwrite(A, 'imgBMP.bmp');
-Manipulación de Imágenes: Suma y Resta
-octave
- 
-B = A + 20; % Aclarar imagen
-imshow(B);
-Clase 4: Ruido y Filtros
-Introducción de Ruido
-Añadir ruido "sal y pimienta" y eliminarlo usando un filtro de mediana.
+# Clase 3: Imágenes y Representación Digital
 
-octave
- 
-Y = imnoise(A, 'salt & pepper', 0.05);
-Z = medfil2(Y);
-imshow(Z);
-Otras Operaciones
-Conversión a Escala de Grises
-Ajuste de Contraste
-Redimensionado
-Rotación
-Detección de Bordes
-Segmentación de Imágenes
-Clase 5: Transformaciones Geométricas
-Traslación
-Mover la imagen en los ejes x e y.
+# Trabajamos con imágenes en 8 bits, donde los píxeles tienen valores de 0 a 255. 
+# Nota: OpenCV carga imágenes en BGR, por lo que es necesario convertirlas a RGB.
 
-Rotación
-Rotar la imagen en un ángulo específico.
-
-octave
- 
-B = imrotate(A, 45); % Rotar 45 grados
-imshow(B);
-Clase 6: Transformaciones Afines
-Escalamiento
-Aumentar o disminuir el tamaño de la imagen.
-
-Efecto Rippling
-Crear un efecto ondulado en la imagen.
-
-octave
- 
-Lx=75; Ly=75;
-for k=5:5:200
-  B=uint8(zeros(m,n,r));
-  for x=1:m
-    for y=1:n
-       xaux=round(x+k*sin(2*pi*y/Lx));
-       yaux=round(y+k*sin(2*pi*x/Ly));
-       B(xaux+1,yaux+1,:)=A(x,y,:);
-    endfor
-  endfor
-endfor
-Clase 7: Histogramas
-Concepto
-Un histograma es la representación de la frecuencia de aparición de niveles de gris en una imagen.
-
-Cálculo del Histograma
-octave
- 
-h1 = zeros(256,1);
-for x=1:m
-  for y=1:n
-    h1(A(x,y)+1) = h1(A(x,y)+1)+1;
-  end
-end
-Modificación Mediante Histogramas
-Ecualización
-Distribuye uniformemente los niveles de gris.
-
-Estiramiento
-Expande el rango de intensidades.
-
-Reducción
-Comprime la escala de grises.
-
-octave
- 
-B = ((s_max-s_min)/(r_max-r_min))*(A-r_min)+s_min;
-Este repositorio es una excelente referencia para entender cómo se procesan y manipulan imágenes digitalmente utilizando diversas técnicas y algoritmos. ¡Explora el código y experimenta con tus propias imágenes!
-
-go
- 
-
-Este contenido está formateado para un README de GitHub, y puedes copiarlo y pegarlo directamente en tu archivo `README.md`.
-
-
-
-Dijiste:
-DAME TODO EN UN SOLO REAMDE CON CODIO Y COMENTARIOS
-Este contenido podría infringir nuestras Políticas de uso.
-ChatGPT dijo:
-ChatGPT
-Aquí tienes el README completo con todo el contenido, incluyendo el código y los comentarios. Puedes copiarlo y pegarlo directamente en tu archivo README.md en GitHub.
-
-markdown
- 
-# Procesamiento de Imágenes
-
-Este repositorio contiene ejemplos y ejercicios prácticos sobre procesamiento de imágenes, utilizando herramientas como OpenCV, Octave, y otros paquetes relevantes. A continuación se presenta un resumen de las clases y las principales operaciones discutidas.
-
-## Clase 1: Introducción
-
-Se discutieron los conceptos iniciales sobre el procesamiento de imágenes.
-
-## Clase 2: Feriado
-
-No hubo clase.
-
-## Clase 3: Imágenes y Representación Digital
-
-### ¿Qué es una imagen?
-Una imagen es una representación bidimensional de una escena, capturada por un sistema (cámara, escáner, etc.). En computadoras, se representa como una matriz bidimensional donde cada entrada corresponde a un píxel.
-
-### Imágenes en Escala de Grises y RGB
-Trabajamos con imágenes en 8 bits, donde los píxeles tienen valores de 0 a 255. Nota: OpenCV carga imágenes en BGR, por lo que es necesario convertirlas a RGB.
-
-```python
 import cv2
 # Leer la imagen
 A = cv2.imread('img.jpeg')
 # Convertir el formato de BGR a RGB
 A = cv2.cvtColor(A, cv2.COLOR_BGR2RGB)
-Operaciones Básicas con Imágenes en Octave
-Cargar y Mostrar Imágenes
-octave
- 
+  
+   
+% Operaciones Básicas con Imágenes en   
+
+% Cargar y Mostrar Imágenes
+
 % Cargar la imagen
 A = imread('img.jpg');
 % Mostrar la imagen
 imshow(A);
 % Colocar un título
 title('Mi imagen');
-Guardar Imágenes en Diferentes Formatos
-octave
- 
+  
+   
+% Guardar Imágenes en Diferentes Formatos
+
 % Guardar imagen en otro formato
 imwrite(A, 'imgBMP.bmp');
-Manipulación de Imágenes: Suma y Resta
-octave
- 
+  
+   
+% Manipulación de Imágenes: Suma y Resta
+
 % Aclarar la imagen sumando un valor a cada píxel
 B = A + 20;
 imshow(B);
@@ -179,12 +40,12 @@ imshow(B);
 % Oscurecer la imagen restando un valor a cada píxel
 B = A - 20;
 imshow(B);
-Clase 4: Ruido y Filtros
-Introducción de Ruido
-Añadir ruido "sal y pimienta" y eliminarlo usando un filtro de mediana.
+  
+   
+% Clase 4: Ruido y Filtros
 
-octave
- 
+% Introducción de Ruido
+
 pkg load image
 
 % Cargar la imagen
@@ -204,68 +65,70 @@ Z = medfil2(Y);
 subplot(1,3,3)
 imshow(Z)
 title('Imagen limpiada')
-Otras Operaciones
-Conversión a Escala de Grises
+  
+   
+% Otras Operaciones
 
-octave
- 
+% Conversión a Escala de Grises
+
 % Convertir imagen RGB a escala de grises
 B = rgb2gray(A);
 subplot(1,2,2)
 imshow(B)
 title('Imagen en escala de grises')
-Ajuste de Contraste
+  
+   
+% Ajuste de Contraste
 
-octave
- 
 % Ajustar el contraste de la imagen
 B = imadjust(A);
 subplot(1,2,2)
 imshow(B)
 title('Imagen con contraste mejorado')
-Redimensionado
+  
+   
+% Redimensionado
 
-octave
- 
 % Redimensionar la imagen
 B = imresize(A, [256, 256]);
 subplot(1,2,2)
 imshow(B)
 title('Imagen redimensionada')
-Rotación
+  
+   
+% Rotación
 
-octave
- 
 % Rotar la imagen 45 grados
 B = imrotate(A, 45);
 subplot(1,2,2)
 imshow(B)
 title('Imagen rotada')
-Detección de Bordes
+  
+   
+% Detección de Bordes
 
-octave
- 
 % Detectar bordes usando el método Canny
 B = edge(A, 'Canny');
 subplot(1,2,2)
 imshow(B)
 title('Imagen con bordes resaltados')
-Segmentación de Imágenes
+  
+   
+% Segmentación de Imágenes
 
-octave
- 
 % Segmentar la imagen en diferentes tonalidades
 B = graythresh(A);
 C = im2bw(A,B);
 subplot(1,2,2)
 imshow(C)
 title('Imagen segmentada')
-Clase 5: Transformaciones Geométricas
-Traslación
-Mover la imagen en los ejes x e y.
+  
+   
+% Clase 5: Transformaciones Geométricas
 
-octave
- 
+% Traslación
+% Mover la imagen en los ejes x e y.
+
 pkg load image
 
 % Cargar la imagen
@@ -294,11 +157,11 @@ for i=1:min([m n])
   title('Imagen trasladada')
   pause(0.1)
 end
-Rotación
-Rotar la imagen en un ángulo específico.
+  
+   
+% Rotación
+% Rotar la imagen en un ángulo específico.
 
-octave
- 
 pkg load image
 
 % Cargar la imagen
@@ -327,15 +190,16 @@ end
 subplot(1,2,2)
 imshow(B)
 title('Imagen rotada')
-Clase 6: Transformaciones Afines
-Escalamiento
-Aumentar o disminuir el tamaño de la imagen.
+  
+   
+% Clase 6: Transformaciones Afines
 
-Efecto Rippling
-Crear un efecto ondulado en la imagen.
+% Escalamiento
+% Aumentar o disminuir el tamaño de la imagen.
 
-octave
- 
+% Efecto Rippling
+% Crear un efecto ondulado en la imagen.
+
 pkg load image
 
 % Cargar la imagen
@@ -367,13 +231,12 @@ for k = 5:5:200
   title('Imagen con efecto rippling')
   pause(0.05)
 end
-Clase 7: Histogramas
-Concepto
-Un histograma es la representación de la frecuencia de aparición de niveles de gris en una imagen.
+  
+   
+% Clase 7: Histogramas
 
-Cálculo del Histograma
-octave
- 
+% Cálculo del Histograma
+
 pkg load image
 
 % Cargar la imagen
@@ -394,12 +257,13 @@ subplot(2,2,2)
 bar(0:255,h1)
 title('Histograma')
 xlim([0 255])
-Modificación Mediante Histogramas
-Ecualización
-Distribuye uniformemente los niveles de gris.
+  
+   
+% Modificación Mediante Histogramas
 
-octave
- 
+% Ecualización
+% Distribuye uniformemente los niveles de gris.
+
 pkg load image
 
 % Cargar la imagen
@@ -447,10 +311,10 @@ subplot(2,2,4)
 bar(0:255,h2)
 title('Histograma de la imagen ecualizada')
 xlim([0 255])
-Estiramiento
-Expande el rango de intensidades.
-
-octave
+  
+   
+% Estiramiento
+% Expande el rango de intensidades.
 
 pkg load image
 
@@ -478,11 +342,11 @@ title('Imagen estirada')
 subplot(2,2,4)
 imhist(B)
 title('Histograma de la imagen estirada')
-Reducción
-Comprime la escala de grises.
+  
+   
+% Reducción
+% Comprime la escala de grises.
 
-octave
- 
 pkg load image
 
 % Cargar la imagen
